@@ -19,7 +19,7 @@ export const AuthProvider = ({ children }) => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Origin': `${NEXT_URL}`,
       },
       body: JSON.stringify(user),
     });
@@ -39,7 +39,7 @@ export const AuthProvider = ({ children }) => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Origin': `${NEXT_URL}`,
       },
       body: JSON.stringify({ identifier, password }),
     });
@@ -58,7 +58,7 @@ export const AuthProvider = ({ children }) => {
     const res = await fetch(`${NEXT_URL}/api/logout`, {
       method: 'POST',
       headers: {
-        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Origin': `${NEXT_URL}`,
       },
     });
 
@@ -71,7 +71,7 @@ export const AuthProvider = ({ children }) => {
   const checkUserLoggedIn = async (user) => {
     const res = await fetch(`${NEXT_URL}/api/user`, {
       headers: {
-        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Origin': `${NEXT_URL}`,
       },
     });
     const data = await res.json();
