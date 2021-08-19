@@ -29,7 +29,7 @@ const EventMap = ({ evt }) => {
         console.log(error);
       }
     );
-  }, []);
+  }, [viewport, evt.address]);
 
   Geocode.setApiKey(process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY);
 
